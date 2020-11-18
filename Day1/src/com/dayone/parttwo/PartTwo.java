@@ -13,7 +13,7 @@ public class PartTwo {
 
         try {
 
-            File file = new File("input.txt");
+            File file = new File("input-day1.txt");
             Scanner inputScanner = new Scanner(file);
 
             int totalFuelRequirement = calculateTotalFuelRequirement(inputScanner);

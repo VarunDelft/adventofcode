@@ -1,4 +1,4 @@
-package com.aoc.daytwo;
+package com.aoc.daytwo.partone;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class DayTwo {
+public class DayTwoPartOne {
 
     public static void main(String[] args) {
 
@@ -20,6 +20,8 @@ public class DayTwo {
 
             List<Integer> opCodes = processOpCodesAsList(inputScanner);
 
+            opCodes = setInitialState(opCodes, 12, 2);
+
             final List<Integer> intCodeResult = runIntCodeProgram(opCodes);
 
             System.out.println(intCodeResult);
@@ -29,6 +31,14 @@ public class DayTwo {
             e.printStackTrace();
         }
 
+    }
+
+    private static List<Integer> setInitialState(List<Integer> opCodes, int valueAtOne, int valueAtTwo){
+
+        opCodes.set(1, valueAtOne);
+        opCodes.set(2, valueAtTwo);
+
+        return opCodes;
     }
 
     private static List<Integer> runIntCodeProgram(List<Integer> opCodes) {
